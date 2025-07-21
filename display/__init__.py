@@ -75,7 +75,7 @@ class Display(
         options.brightness = BRIGHTNESS
         options.pwm_lsb_nanoseconds = 130
         options.led_rgb_sequence = "RGB"
-        # options.pixel_mapper_config = "Rotate:180"
+        options.pixel_mapper_config = "Rotate:180"
         options.show_refresh_rate = 0
         options.gpio_slowdown = GPIO_SLOWDOWN
         options.disable_hardware_pulsing = True
