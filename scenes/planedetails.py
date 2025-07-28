@@ -38,7 +38,7 @@ class PlaneDetailsScene(object):
         text_length = graphics.DrawText(
             self.canvas,
             PLANE_FONT,
-            self.plane_position + 33,
+            self.plane_position,
             PLANE_DISTANCE_FROM_TOP,
             PLANE_DETAILS_COLOUR,
             plane,
@@ -46,7 +46,7 @@ class PlaneDetailsScene(object):
 
         # Handle scrolling
         self.plane_position -= 1
-        if self.plane_position < 33 + text_length:
+        if self.plane_position + text_length < 33 + text_length:
             self.plane_position = screen.WIDTH
             if len(self._data) > 1:
                 self._data_index = (self._data_index + 1) % len(self._data)
