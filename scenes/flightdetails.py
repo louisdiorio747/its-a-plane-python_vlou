@@ -64,7 +64,7 @@ class FlightDetailsScene(object):
                 flight_no_text_length += ch_length
 
         # Draw bar
-        if len(self._data) > 1:
+        if len(self._data) > 100:
             # Clear are where N of M might have been
             self.draw_square(
                 DATA_INDEX_POSITION[0] - BAR_PADDING,
