@@ -29,7 +29,7 @@ class PlaneDetailsScene(object):
         self.draw_square(
             33,
             PLANE_DISTANCE_FROM_TOP - PLANE_TEXT_HEIGHT,
-            screen.WIDTH - 33,
+            screen.WIDTH + 40,
             screen.HEIGHT,
             colours.BLACK,
         )
@@ -46,8 +46,8 @@ class PlaneDetailsScene(object):
 
         # Handle scrolling
         self.plane_position -= 1
-        if self.plane_position + text_length < 33:
-            self.plane_position = screen.WIDTH - 33
+        if self.plane_position + text_length < 33 + text_length:
+            self.plane_position = screen.WIDTH
             if len(self._data) > 1:
                 self._data_index = (self._data_index + 1) % len(self._data)
                 self._data_all_looped = (not self._data_index) or self._data_all_looped
