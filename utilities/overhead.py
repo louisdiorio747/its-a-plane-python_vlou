@@ -136,6 +136,13 @@ class Overhead:
                             else ""
                         )
 
+                        time = (
+                            flight.time_details
+                            if not (flight.time_details in BLANK_FIELDS)
+                            else ""
+                        )
+                        print(time)
+
                         # Get Owner icao
 
                         try:
