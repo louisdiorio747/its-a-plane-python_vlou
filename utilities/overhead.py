@@ -136,14 +136,7 @@ class Overhead:
                             else ""
                         )
 
-                        '''
-                        time = (
-                            flight.time_details
-                            if not (flight.time_details in BLANK_FIELDS)
-                            else ""
-                        )
-                        print(time)
-                        '''
+
                         # Get Owner icao
 
                         try:
@@ -166,6 +159,7 @@ class Overhead:
                                 "vertical_speed": flight.vertical_speed,
                                 "altitude": flight.altitude,
                                 "callsign": callsign,
+                                "time": flight.time_details
                             }
                         )
                         break
