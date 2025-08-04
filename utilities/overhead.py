@@ -159,9 +159,9 @@ class Overhead:
                             elif destination == "DCA":
                                 print("DCA arrival")
 
-                            print(scheduled_departure)
-                            print("----------------")
-                            print(scheduled_arrival)
+                            print(all_time_info)
+                            # print("----------------")
+                            # print(scheduled_arrival)
 
                         except (KeyError, TypeError):
                             delay = ""
