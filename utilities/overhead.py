@@ -113,17 +113,6 @@ class Overhead:
                             plane = details["aircraft"]["model"]["text"]
                         except (KeyError, TypeError):
                             plane = ""
-                        # Get delay info
-                        try:
-                            delay = details["time"]
-                            all_time_info = details["time"]
-                            scheduled_departure = all_time_info["scheduled"]["departure"]
-                            scheduled_arrival = all_time_info["scheduled"]["departure"]
-                            print(scheduled_departure)
-                            print("----------------")
-                            print(scheduled_arrival)
-                        except (KeyError, TypeError):
-                            delay = ""
 
                         # Tidy up what we pass along
                         plane = plane if not (plane.upper() in BLANK_FIELDS) else ""
@@ -157,6 +146,25 @@ class Overhead:
                                     else "")
                         
                         owner_iata = flight.airline_iata or "N/A"
+
+                        # Get delay info
+                        try:
+                            delay = details["time"]
+                            all_time_info = details["time"]
+                            scheduled_departure = all_time_info["scheduled"]["departure"]
+                            scheduled_arrival = all_time_info["scheduled"]["arrival"]
+
+                            if origin == "DCA":
+                                print("Dca departure")
+                            elif destination == "DCA":
+                                print("DCA arrival")
+
+                            print(scheduled_departure)
+                            print("----------------")
+                            print(scheduled_arrival)
+
+                        except (KeyError, TypeError):
+                            delay = ""
 
                         data.append(
                             {
