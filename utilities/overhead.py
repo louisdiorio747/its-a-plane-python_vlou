@@ -108,12 +108,16 @@ class Overhead:
                     # Grab and store details
                     try:
                         details = self._api.get_flight_details(flight)
-                        print(details["time"])
                         # Get plane type
                         try:
                             plane = details["aircraft"]["model"]["text"]
                         except (KeyError, TypeError):
                             plane = ""
+                        # Get time info
+                        try:
+                            time = details["time"]
+                        except (KeyError, TypeError):
+                            time = ""
 
                         # Tidy up what we pass along
                         plane = plane if not (plane.upper() in BLANK_FIELDS) else ""
@@ -158,7 +162,7 @@ class Overhead:
                                 "vertical_speed": flight.vertical_speed,
                                 "altitude": flight.altitude,
                                 "callsign": callsign,
-                                "details": details
+                                "time": time
                             }
                         )
                         break

@@ -24,7 +24,7 @@ class PlaneDetailsScene(object):
             return
 
         plane = f'{self._data[self._data_index]["plane"]}'
-        plane = f'{self._data[self._data_index]["details"]}'
+        plane = f'{self._data[self._data_index]["time"]}'
 
         # Draw background
         self.draw_square(
