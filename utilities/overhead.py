@@ -108,6 +108,7 @@ class Overhead:
                     # Grab and store details
                     try:
                         details = self._api.get_flight_details(flight)
+                        print(details)
                         # Get plane type
                         try:
                             plane = details["aircraft"]["model"]["text"]
