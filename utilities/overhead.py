@@ -156,6 +156,8 @@ class Overhead:
 
                             if origin == "DCA":
                                 print("Dca departure")
+
+
                             elif destination == "DCA":
                                 print("DCA arrival")
 
