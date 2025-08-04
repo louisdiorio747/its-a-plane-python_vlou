@@ -135,7 +135,11 @@ class Overhead:
                             if not (flight.callsign.upper() in BLANK_FIELDS)
                             else ""
                         )
-
+                        time = (
+                            flight.time
+                            if not (flight.time.upper() in BLANK_FIELDS)
+                            else ""
+                        )
 
                         # Get Owner icao
 
@@ -159,7 +163,7 @@ class Overhead:
                                 "vertical_speed": flight.vertical_speed,
                                 "altitude": flight.altitude,
                                 "callsign": callsign,
-                                # "time": flight.time_details
+                                "time": time
                             }
                         )
                         break
