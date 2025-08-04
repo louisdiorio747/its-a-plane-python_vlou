@@ -108,7 +108,6 @@ class Overhead:
                     # Grab and store details
                     try:
                         details = self._api.get_flight_details(flight)
-
                         # Get plane type
                         try:
                             plane = details["aircraft"]["model"]["text"]
@@ -135,11 +134,6 @@ class Overhead:
                             if not (flight.callsign.upper() in BLANK_FIELDS)
                             else ""
                         )
-                        time = (
-                            flight.time
-                            if not (flight.time.upper() in BLANK_FIELDS)
-                            else ""
-                        )
 
                         # Get Owner icao
 
@@ -163,7 +157,7 @@ class Overhead:
                                 "vertical_speed": flight.vertical_speed,
                                 "altitude": flight.altitude,
                                 "callsign": callsign,
-                                "time": time
+                                "details": details
                             }
                         )
                         break
