@@ -113,12 +113,17 @@ class Overhead:
                             plane = details["aircraft"]["model"]["text"]
                         except (KeyError, TypeError):
                             plane = ""
-                        # Get time info
+                        # Get delay info
                         try:
-                            time = details["time"]
-                            print(time)
+                            delay = details["time"]
+                            all_time_info = details["time"]
+                            scheduled_departure = all_time_info["scheduled"]["departure"]
+                            scheduled_arrival = all_time_info["scheduled"]["departure"]
+                            print(scheduled_departure)
+                            print("----------------")
+                            print(scheduled_arrival)
                         except (KeyError, TypeError):
-                            time = ""
+                            delay = ""
 
                         # Tidy up what we pass along
                         plane = plane if not (plane.upper() in BLANK_FIELDS) else ""
@@ -163,7 +168,7 @@ class Overhead:
                                 "vertical_speed": flight.vertical_speed,
                                 "altitude": flight.altitude,
                                 "callsign": callsign,
-                                "time": time
+                                "delay": delay
                             }
                         )
                         break
