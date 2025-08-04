@@ -116,6 +116,7 @@ class Overhead:
                         # Get time info
                         try:
                             time = details["time"]
+                            print(time)
                         except (KeyError, TypeError):
                             time = ""
 
