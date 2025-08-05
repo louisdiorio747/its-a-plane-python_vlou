@@ -23,7 +23,7 @@ class PlaneDetailsScene(object):
         if len(self._data) == 0:
             return
 
-        plane = f'{self._data[self._data_index]["delay"]}' + " -- " + f'{self._data[self._data_index]["plane"]}'
+        plane = f'{self._data[self._data_index]["delay"]}' + " " + f'{self._data[self._data_index]["plane"]}'
         # plane = f'{self._data[self._data_index]["delay"]}'
 
         # Draw background
