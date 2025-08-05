@@ -160,6 +160,7 @@ class Overhead:
                                 estimated_departure = all_time_info["estimated"]["departure"]
                                 calc_delay = estimated_departure - scheduled_departure
                                 if calc_delay < 0:
+                                    calc_delay = scheduled_departure - estimated_departure
                                     del_time = datetime.datetime.utcfromtimestamp(calc_delay)
                                     delay = ("Early: " + del_time.strftime('%H') + " Hours and " +
                                              del_time.strftime('%M') + " Minutes.")
@@ -174,6 +175,7 @@ class Overhead:
                                 estimated_arrival = all_time_info["estimated"]["arrival"]
                                 calc_delay = estimated_arrival - scheduled_arrival
                                 if calc_delay < 0:
+                                    calc_delay = scheduled_arrival - estimated_arrival
                                     del_time = datetime.datetime.utcfromtimestamp(calc_delay)
                                     delay = ("Early: " + del_time.strftime('%H') + " Hours and " +
                                              del_time.strftime('%M') + " Minutes.")
