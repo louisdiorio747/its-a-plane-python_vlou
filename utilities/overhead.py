@@ -167,20 +167,20 @@ class Overhead:
                                     del_time = datetime.datetime.utcfromtimestamp(calc_delay)
                                     delay = ("Delayed: " + del_time.strftime('%H') + "Hours and " +
                                              del_time.strftime('%H') + "Minutes.")
-
                             elif destination == "DCA":
                                 print("DCA arrival")
                                 estimated_arrival = all_time_info["estimated"]["arrival"]
                                 calc_delay = estimated_arrival - scheduled_arrival
                                 if calc_delay < 0:
-                                    delay = "Early!"
+                                    del_time = datetime.datetime.utcfromtimestamp(calc_delay)
+                                    delay = (del_time.strftime('%H') + "Hours and " +
+                                             del_time.strftime('%M') + "Minutes early!")
                                 elif 0 < calc_delay < 600:
                                     delay = "On Time."
                                 else:
                                     del_time = datetime.datetime.utcfromtimestamp(calc_delay)
                                     delay = ("Delayed: " + del_time.strftime('%H') + "Hours and " +
-                                             del_time.strftime('%H') + "Minutes.")
-
+                                             del_time.strftime('%M') + "Minutes.")
                             else:
                                 delay = ""
 
