@@ -206,7 +206,7 @@ class Overhead:
                             else:
                                 delay = ""
 
-                            print(delay)
+                            # print(delay)
                             # print("----------------")
                             # print(scheduled_arrival)
 
