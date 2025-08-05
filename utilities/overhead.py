@@ -149,19 +149,29 @@ class Overhead:
 
                         # Get delay info
                         try:
-                            delay = details["time"]
+                            delay = ""
                             all_time_info = details["time"]
-                            scheduled_departure = all_time_info["scheduled"]["departure"]
-                            scheduled_arrival = all_time_info["scheduled"]["arrival"]
+                            scheduled_departure = int(all_time_info["scheduled"]["departure"])
+                            scheduled_arrival = int(all_time_info["scheduled"]["arrival"])
 
                             if origin == "DCA":
                                 print("Dca departure")
-
+                                estimated_departure = all_time_info["estimated"]["departure"]
+                                calc_delay = estimated_departure - scheduled_departure
+                                if calc_delay < 0:
+                                    delay = "Early!"
+                                elif 0 < calc_delay < 600:
+                                    delay = "On Time."
+                                else:
+                                    delay = "Delayed: " + datetime.datetime.utcfromtimestamp(calc_delay).strftime('T%H:%M:%SZ')
 
                             elif destination == "DCA":
                                 print("DCA arrival")
 
-                            print(all_time_info)
+                            else:
+                                delay = ""
+
+                            print(delay)
                             # print("----------------")
                             # print(scheduled_arrival)
 
