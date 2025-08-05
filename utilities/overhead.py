@@ -164,7 +164,9 @@ class Overhead:
                                 elif 0 < calc_delay < 600:
                                     delay = "On Time."
                                 else:
-                                    delay = "Delayed: " + datetime.datetime.utcfromtimestamp(calc_delay).strftime('T%H:%M:%SZ')
+                                    del_time = datetime.datetime.utcfromtimestamp(calc_delay)
+                                    delay = ("Delayed: " + del_time.strftime('%H') + "Hours and " +
+                                             del_time.strftime('%H') + "Minutes.")
 
                             elif destination == "DCA":
                                 print("DCA arrival")
