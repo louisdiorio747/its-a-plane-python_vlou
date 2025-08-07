@@ -8,7 +8,7 @@ DEFAULT_IMAGE = "default"
 
 class FlightLogoScene:
     @Animator.KeyFrame.add(1)
-    def logo_details(self, count=360):
+    def logo_details(self, count=50):
 
         # Guard against no data
         if len(self._data) == 0:
