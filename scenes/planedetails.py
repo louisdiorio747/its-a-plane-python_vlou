@@ -7,7 +7,7 @@ from setup import colours, fonts, screen
 PLANE_DETAILS_COLOUR = colours.PINK
 PLANE_DISTANCE_FROM_TOP = 30
 PLANE_TEXT_HEIGHT = 9
-SCROLL_STOP_POSITION = 33 #33
+SCROLL_STOP_POSITION = 0 #33
 PLANE_FONT = fonts.small
 
 
