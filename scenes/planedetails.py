@@ -7,6 +7,7 @@ from setup import colours, fonts, screen
 PLANE_DETAILS_COLOUR = colours.PINK
 PLANE_DISTANCE_FROM_TOP = 30
 PLANE_TEXT_HEIGHT = 9
+SCROLL_START_POSITION = 0 #33
 PLANE_FONT = fonts.small
 
 
@@ -28,7 +29,7 @@ class PlaneDetailsScene(object):
 
         # Draw background
         self.draw_square(
-            33,
+            SCROLL_START_POSITION,
             PLANE_DISTANCE_FROM_TOP - PLANE_TEXT_HEIGHT,
             screen.WIDTH + 40,
             screen.HEIGHT,
@@ -47,7 +48,7 @@ class PlaneDetailsScene(object):
 
         # Handle scrolling
         self.plane_position -= 1
-        if self.plane_position + text_length < 33 + text_length:
+        if self.plane_position + text_length < SCROLL_START_POSITION + text_length:
             self.plane_position = screen.WIDTH
             if len(self._data) > 1:
                 self._data_index = (self._data_index + 1) % len(self._data)
@@ -56,4 +57,4 @@ class PlaneDetailsScene(object):
 
     @Animator.KeyFrame.add(0)
     def reset_scrolling(self):
-        self.plane_position = screen.WIDTH - 33
+        self.plane_position = screen.WIDTH - SCROLL_START_POSITION
