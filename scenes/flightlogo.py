@@ -3,7 +3,7 @@ from PIL import Image
 from utilities.animator import Animator
 from setup import colours
 
-LOGO_SIZE = 32
+LOGO_SIZE = 27
 DEFAULT_IMAGE = "default"
 
 class FlightLogoScene:
