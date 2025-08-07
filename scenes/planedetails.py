@@ -45,7 +45,7 @@ class PlaneDetailsScene(object):
             PLANE_DETAILS_COLOUR,
             plane,
         )
-
+        print(self.canvas)
         # Handle scrolling
         self.plane_position -= 1
         if self.plane_position + text_length < SCROLL_STOP_POSITION + text_length:
