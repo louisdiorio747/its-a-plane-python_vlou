@@ -168,16 +168,16 @@ class Overhead:
                                         if del_time.strftime('%H') == "00":
                                             delay = ("Early: " + del_time.strftime('%M') + " Min.")
                                         else:
-                                            delay = ("Early: " + del_time.strftime('%H') + " Hr and " +
+                                            delay = ("Early: " + del_time.strftime('%H') + " Hr : " +
                                                      del_time.strftime('%M') + " Min.")
                                 elif 0 <= calc_delay <= 600:
                                     delay = "On Time."
                                 else:
                                     del_time = datetime.datetime.utcfromtimestamp(calc_delay)
                                     if del_time.strftime('%H') == "00":
-                                        delay = ("Delayed: " + del_time.strftime('%M') + " Min.")
+                                        delay = ("Delay: " + del_time.strftime('%M') + " Min.")
                                     else:
-                                        delay = ("Delayed: " + del_time.strftime('%H') + " Hr and " +
+                                        delay = ("Delay: " + del_time.strftime('%H') + " Hr : " +
                                                  del_time.strftime('%M') + " Min.")
                             elif destination == "DCA":
                                 # print("DCA arrival")
@@ -192,16 +192,16 @@ class Overhead:
                                         if del_time.strftime('%H') == "00":
                                             delay = ("Early: " + del_time.strftime('%M') + " Min.")
                                         else:
-                                            delay = ("Early: " + del_time.strftime('%H') + " Hr and " +
+                                            delay = ("Early: " + del_time.strftime('%H') + " Hr : " +
                                                      del_time.strftime('%M') + " Min.")
                                 elif 0 <= calc_delay <= 600:
                                     delay = "On Time."
                                 else:
                                     del_time = datetime.datetime.utcfromtimestamp(calc_delay)
                                     if del_time.strftime('%H') == "00":
-                                        delay = ("Delayed: " + del_time.strftime('%M') + " Min.")
+                                        delay = ("Delay: " + del_time.strftime('%M') + " Min.")
                                     else:
-                                        delay = ("Delayed: " + del_time.strftime('%H') + " Hr and " +
+                                        delay = ("Delay: " + del_time.strftime('%H') + " Hr : " +
                                                  del_time.strftime('%M') + " Min.")
                             else:
                                 delay = ""
