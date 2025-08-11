@@ -150,6 +150,7 @@ class Overhead:
 
                         # Get delay info
                         try:
+                            print(details)
                             delay = ""
                             all_time_info = details["time"]
                             scheduled_departure = int(all_time_info["scheduled"]["departure"])
