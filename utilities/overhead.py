@@ -149,16 +149,25 @@ class Overhead:
                         owner_iata = flight.airline_iata or "N/A"
 
                         # Get Origin + Destination Cities
+                        
+                        try:
 
+                        origin_city = ""
+                        destination_city = ""
+                        
                         origin_city = details["origin"]["region"]["city"]
                         destination_city = details["destination"]["region"]["city"]
 
                         print(origin_city)
                         print(destination_city)
+                        
+                        except(KeyError, TypeError):
+                            origin_city = ""
+                            destination_city = ""
 
                         # Get delay info
                         try:
-                            print(details)
+                            # print(details)
                             delay = ""
                             all_time_info = details["time"]
                             scheduled_departure = int(all_time_info["scheduled"]["departure"])
