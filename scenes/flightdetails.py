@@ -88,7 +88,7 @@ class FlightDetailsScene(object):
                 dc_length = graphics.DrawText(
                         self.canvas,
                         CITY_FONT,
-                        DESTINATION_CITY_POSITION[0] - destination_text_length,
+                        DESTINATION_CITY_POSITION[0] - destination_text_length - 4,
                         DESTINATION_CITY_POSITION[1],
                         colours.YELLOW
                         if destination_city.isnumeric()
