@@ -152,14 +152,14 @@ class Overhead:
                         
                         try:
 
-                        origin_city = ""
-                        destination_city = ""
+                            origin_city = ""
+                            destination_city = ""
                         
-                        origin_city = details["origin"]["region"]["city"]
-                        destination_city = details["destination"]["region"]["city"]
+                            origin_city = details["origin"]["region"]["city"]
+                            destination_city = details["destination"]["region"]["city"]
 
-                        print(origin_city)
-                        print(destination_city)
+                            print(origin_city)
+                            print(destination_city)
                         
                         except(KeyError, TypeError):
                             origin_city = ""
