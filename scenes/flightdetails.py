@@ -69,7 +69,7 @@ class FlightDetailsScene(object):
                 flight_no_text_length += ch_length
 
         # Draw cities if available
-        flight_no_text_length = 0
+        destination_text_length = 0
         if (
             self._data[self._data_index]["origin_city"]
             and self._data[self._data_index]["destination_city"] != ""
@@ -82,21 +82,24 @@ class FlightDetailsScene(object):
                     CITY_FONT,
                     ORIGIN_CITY_POSITION[0],
                     ORIGIN_CITY_POSITION[1],
-                    FLIGHT_NUMBER_NUMERIC_COLOUR
+                    colours.YELLOW
                     if origin_city.isnumeric()
                     else FLIGHT_NUMBER_ALPHA_COLOUR,
                     origin_city,
                 )
-            dc_length = graphics.DrawText(
-                    self.canvas,
-                    CITY_FONT,
-                    DESTINATION_CITY_POSITION[0],
-                    DESTINATION_CITY_POSITION[1],
-                    FLIGHT_NUMBER_NUMERIC_COLOUR
-                    if destination_city.isnumeric()
-                    else FLIGHT_NUMBER_ALPHA_COLOUR,
-                    destination_city,
-                )
+
+            for destination in destination_city:
+                dc_length = graphics.DrawText(
+                        self.canvas,
+                        CITY_FONT,
+                        DESTINATION_CITY_POSITION[0] - destination_text_length,
+                        DESTINATION_CITY_POSITION[1],
+                        colours.YELLOW
+                        if destination_city.isnumeric()
+                        else FLIGHT_NUMBER_ALPHA_COLOUR,
+                        destination_city,
+                    )
+                destination_text_length += dc_length
 
         # Draw bar
         if len(self._data) > 100:
