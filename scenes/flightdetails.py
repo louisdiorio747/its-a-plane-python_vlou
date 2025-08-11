@@ -88,7 +88,7 @@ class FlightDetailsScene(object):
                     origin_city,
                 )
 
-            for destination in destination_city:
+            for i in range(0,1):
                 dc_length = graphics.DrawText(
                         self.canvas,
                         CITY_FONT,
