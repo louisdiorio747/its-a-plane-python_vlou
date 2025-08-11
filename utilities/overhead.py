@@ -155,8 +155,8 @@ class Overhead:
                             origin_city = ""
                             destination_city = ""
                         
-                            origin_city = details["origin"]["region"]["city"]
-                            destination_city = details["destination"]["region"]["city"]
+                            origin_city = details["origin"]
+                            destination_city = details["destination"]
 
                             print(origin_city)
                             print(destination_city)
