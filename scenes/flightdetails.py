@@ -11,8 +11,10 @@ FLIGHT_NO_POSITION = (120, 21)
 FLIGHT_NO_TEXT_HEIGHT = 8  # based on font size
 FLIGHT_NO_FONT = fonts.small
 
-ORIGIN_CITY_POSITION = (20, 21)
-DESTINATION_CITY_POSITION = (200, 21)
+ORIGIN_CITY_POSITION = (34, 21)
+DESTINATION_CITY_POSITION = (240, 21)
+CITY_TEXT_HEIGHT = 8  # based on font size
+CITY_FONT = fonts.extrasmall
 
 FLIGHT_NUMBER_ALPHA_COLOUR = colours.BLUE
 FLIGHT_NUMBER_NUMERIC_COLOUR = colours.BLUE_LIGHT
@@ -77,7 +79,7 @@ class FlightDetailsScene(object):
 
             oc_length = graphics.DrawText(
                     self.canvas,
-                    FLIGHT_NO_FONT,
+                    CITY_FONT,
                     ORIGIN_CITY_POSITION[0],
                     ORIGIN_CITY_POSITION[1],
                     FLIGHT_NUMBER_NUMERIC_COLOUR
@@ -87,8 +89,8 @@ class FlightDetailsScene(object):
                 )
             dc_length = graphics.DrawText(
                     self.canvas,
-                    FLIGHT_NO_FONT,
-                    DESTINATION_CITY_POSITION[0],
+                    CITY_FONT,
+                    DESTINATION_CITY_POSITION[0] - dc_length,
                     DESTINATION_CITY_POSITION[1],
                     FLIGHT_NUMBER_NUMERIC_COLOUR
                     if destination_city.isnumeric()
