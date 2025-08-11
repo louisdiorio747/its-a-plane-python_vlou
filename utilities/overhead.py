@@ -157,9 +157,6 @@ class Overhead:
                         
                             origin_city = details["airport"]["origin"]["position"]["region"]["city"]
                             destination_city = details["airport"]["destination"]["position"]["region"]["city"]
-
-                            print(origin_city)
-                            print(destination_city)
                         
                         except(KeyError, TypeError):
                             origin_city = ""
@@ -241,7 +238,9 @@ class Overhead:
                                 "vertical_speed": flight.vertical_speed,
                                 "altitude": flight.altitude,
                                 "callsign": callsign,
-                                "delay": delay
+                                "delay": delay,
+                                "origin_city": origin_city,
+                                "destination_city": destination_city
                             }
                         )
                         break
