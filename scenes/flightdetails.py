@@ -11,7 +11,7 @@ FLIGHT_NO_POSITION = (120, 21)
 FLIGHT_NO_TEXT_HEIGHT = 8  # based on font size
 FLIGHT_NO_FONT = fonts.small
 
-ORIGIN_CITY_POSITION = (40, 21)
+ORIGIN_CITY_POSITION = (35, 21)
 DESTINATION_CITY_POSITION = (256, 21)
 CITY_TEXT_HEIGHT = 8  # based on font size
 CITY_FONT = fonts.extrasmall
