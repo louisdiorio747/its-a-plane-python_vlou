@@ -168,7 +168,7 @@ class Overhead:
                                         if del_time.strftime('%H') == "00":
                                             delay = ("Early: " + del_time.strftime('%M') + " Min.")
                                         else:
-                                            delay = ("Early: " + del_time.strftime('%H') + " Hr : " +
+                                            delay = ("Early: " + del_time.strftime('%H') + " Hr, " +
                                                      del_time.strftime('%M') + " Min.")
                                 elif 0 <= calc_delay <= 600:
                                     delay = "On Time."
@@ -177,7 +177,7 @@ class Overhead:
                                     if del_time.strftime('%H') == "00":
                                         delay = ("Delay: " + del_time.strftime('%M') + " Min.")
                                     else:
-                                        delay = ("Delay: " + del_time.strftime('%H') + " Hr : " +
+                                        delay = ("Delay: " + del_time.strftime('%H') + " Hr, " +
                                                  del_time.strftime('%M') + " Min.")
                             elif destination == "DCA":
                                 # print("DCA arrival")
@@ -192,7 +192,7 @@ class Overhead:
                                         if del_time.strftime('%H') == "00":
                                             delay = ("Early: " + del_time.strftime('%M') + " Min.")
                                         else:
-                                            delay = ("Early: " + del_time.strftime('%H') + " Hr : " +
+                                            delay = ("Early: " + del_time.strftime('%H') + " Hr, " +
                                                      del_time.strftime('%M') + " Min.")
                                 elif 0 <= calc_delay <= 600:
                                     delay = "On Time."
@@ -201,7 +201,7 @@ class Overhead:
                                     if del_time.strftime('%H') == "00":
                                         delay = ("Delay: " + del_time.strftime('%M') + " Min.")
                                     else:
-                                        delay = ("Delay: " + del_time.strftime('%H') + " Hr : " +
+                                        delay = ("Delay: " + del_time.strftime('%H') + " Hr, " +
                                                  del_time.strftime('%M') + " Min.")
                             else:
                                 delay = ""
