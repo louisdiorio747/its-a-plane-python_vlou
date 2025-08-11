@@ -11,6 +11,9 @@ FLIGHT_NO_POSITION = (120, 21)
 FLIGHT_NO_TEXT_HEIGHT = 8  # based on font size
 FLIGHT_NO_FONT = fonts.small
 
+ORIGIN_CITY_POSITION = (20, 21)
+DESTINATION_CITY_POSITION = (200, 21)
+
 FLIGHT_NUMBER_ALPHA_COLOUR = colours.BLUE
 FLIGHT_NUMBER_NUMERIC_COLOUR = colours.BLUE_LIGHT
 
@@ -62,6 +65,36 @@ class FlightDetailsScene(object):
                     ch,
                 )
                 flight_no_text_length += ch_length
+
+        # Draw cities if available
+        flight_no_text_length = 0
+        if (
+            self._data[self._data_index]["origin_city"]
+            and self._data[self._data_index]["destination_city"] != ""
+        ):
+            origin_city = f'{self._data[self._data_index]["origin_city"]}'
+            destination_city = f'{self._data[self._data_index]["destination_city"]}'
+
+            oc_length = graphics.DrawText(
+                    self.canvas,
+                    FLIGHT_NO_FONT,
+                    ORIGIN_CITY_POSITION[0],
+                    ORIGIN_CITY_POSITION[1],
+                    FLIGHT_NUMBER_NUMERIC_COLOUR
+                    if origin_city.isnumeric()
+                    else FLIGHT_NUMBER_ALPHA_COLOUR,
+                    origin_city,
+                )
+            dc_length = graphics.DrawText(
+                    self.canvas,
+                    FLIGHT_NO_FONT,
+                    DESTINATION_CITY_POSITION[0],
+                    DESTINATION_CITY_POSITION[1],
+                    FLIGHT_NUMBER_NUMERIC_COLOUR
+                    if destination_city.isnumeric()
+                    else FLIGHT_NUMBER_ALPHA_COLOUR,
+                    destination_city,
+                )
 
         # Draw bar
         if len(self._data) > 100:
