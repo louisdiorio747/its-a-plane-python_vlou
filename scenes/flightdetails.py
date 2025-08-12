@@ -62,7 +62,7 @@ class FlightDetailsScene(object):
                     FLIGHT_NO_POSITION[0] + flight_no_text_length,
                     FLIGHT_NO_POSITION[1],
                     FLIGHT_NUMBER_NUMERIC_COLOUR
-                    if destination_city.isnumeric()
+                    if flight_no.isnumeric()
                     else FLIGHT_NUMBER_ALPHA_COLOUR,
                     ch,
                 )
