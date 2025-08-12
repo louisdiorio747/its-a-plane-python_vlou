@@ -4,7 +4,7 @@ from setup import colours, fonts, screen
 from rgbmatrix import graphics
 
 # Setup
-BAR_STARTING_POSITION = (200, 12)
+BAR_STARTING_POSITION = (190, 12)
 BAR_PADDING = 2
 
 FLIGHT_NO_POSITION = (120, 21)
