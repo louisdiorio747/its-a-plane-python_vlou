@@ -95,7 +95,7 @@ class FlightDetailsScene(object):
                         colours.YELLOW,
                         destination_city,
                     )
-                destination_text_length += dc_length - 4
+                destination_text_length += dc_length + 3
 
         # Draw bar
         if len(self._data) > 100:
