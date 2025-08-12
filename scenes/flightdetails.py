@@ -61,7 +61,9 @@ class FlightDetailsScene(object):
                     FLIGHT_NO_FONT,
                     FLIGHT_NO_POSITION[0] + flight_no_text_length,
                     FLIGHT_NO_POSITION[1],
-                    FLIGHT_NUMBER_NUMERIC_COLOUR,
+                    FLIGHT_NUMBER_NUMERIC_COLOUR
+                    if destination_city.isnumeric()
+                    else FLIGHT_NUMBER_ALPHA_COLOUR,
                     ch,
                 )
                 flight_no_text_length += ch_length
@@ -88,14 +90,12 @@ class FlightDetailsScene(object):
                 dc_length = graphics.DrawText(
                         self.canvas,
                         CITY_FONT,
-                        DESTINATION_CITY_POSITION[0] - destination_text_length - 4,
+                        DESTINATION_CITY_POSITION[0] - destination_text_length,
                         DESTINATION_CITY_POSITION[1],
-                        colours.YELLOW
-                        if destination_city.isnumeric()
-                        else FLIGHT_NUMBER_ALPHA_COLOUR,
+                        colours.YELLOW,
                         destination_city,
                     )
-                destination_text_length += dc_length
+                destination_text_length += dc_length - 4
 
         # Draw bar
         if len(self._data) > 100:
